@@ -4,7 +4,7 @@ from .models import Event, Attendee, Task
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['name', 'description', 'location', 'date', 'attendees']
+        fields = ['name', 'description', 'location', 'attendees']
 
 class AttendeeForm(forms.ModelForm):
     class Meta:
