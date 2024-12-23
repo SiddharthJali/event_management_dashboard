@@ -5,7 +5,7 @@ class Event(models.Model):
     description = models.TextField()
     location = models.CharField(max_length=200)
     date = models.DateTimeField()
-    attendees = models.ManyToManyField('Attendee', related_name='events_related', blank=True)
+    attendees = models.ManyToManyField('Attendee', related_name='events', blank=False)
 
     def __str__(self):
         return self.name
@@ -14,7 +14,7 @@ class Event(models.Model):
 class Attendee(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='attendees_related')
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_attendees')
 
     def __str__(self):
         return self.name

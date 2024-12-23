@@ -1,0 +1,77 @@
+{% extends 'events/navbar.html' %}
+
+{% block title %}Event Management Dashboard{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center py-4">
+            <h1>Event Management Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-header">Total Events</div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ total_events }}</h2>
+                    <p class="card-text">Total number of events scheduled.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Task Tracker</div>
+                <div class="card-body">
+                    <p class="card-text">Tasks Completed: {{ progress|floatformat:1 }}%</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{ progress }}%" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Attendee Status</div>
+                <div class="card-body">
+                    <p class="card-text">Attendees Engaged: {{ attendees_doing_tasks }}</p>
+                    <p class="card-text">Attendees Available: {{ attendees_free }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="calendar"
+     data-coreui-locale="en-US"
+     data-coreui-start-date="2024/02/13"
+     data-coreui-toggle="calendar"
+    ></div>
+</div>
+<script src="{% static 'events/js/coreui.min.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM fully loaded and parsed');
+        var calendarEl = document.getElementById('calendar');
+        if (calendarEl) {
+            console.log('Calendar element found');
+            try {
+                var calendar = new coreui.Calendar(calendarEl, {
+                    locale: 'en-US',
+                    startDate: new Date('2024-02-13')
+                });
+                console.log('Calendar initialized successfully');
+            } catch (error) {
+                console.error('Error initializing calendar:', error);
+            }
+        } else {
+            console.log('Calendar element not found');
+        }
+    });
+</script>
+</div>
+</div>
+{% endblock %}
