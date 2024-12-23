@@ -43,7 +43,7 @@ The Event Management Dashboard is a web application designed to streamline the o
 ---
 
 ## Video Demp
-<iframe width="560" height="315" src="[https://www.youtube.com/embed/video-id](https://www.loom.com/share/bb2b5f164e6c4ccba9e109a1f4deeed1?sid=6a5e2818-32f3-4858-ac71-37452113c41d)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![alt text]]([https://www.youtube.com/watch?v=video-id](https://www.loom.com/share/bb2b5f164e6c4ccba9e109a1f4deeed1?sid=6a5e2818-32f3-4858-ac71-37452113c41d))
 
 ---
 
