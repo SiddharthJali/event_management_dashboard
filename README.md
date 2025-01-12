@@ -39,11 +39,6 @@ The Event Management Dashboard is a web application designed to streamline the o
    ```bash
    python manage.py runserver
    ```
-
----
-
-## Video Demp
-https://github.com/user-attachments/assets/a65ab83d-4cb7-411f-909a-acfcf420af5a
   
 ---
 
